@@ -25,9 +25,12 @@ import org.apache.flink.util.OutputTag;
 
 import java.io.File;
 
+/**
+ * DWD流量域事务事实表处理
+ */
 public class DWDTrafficBaseLogSplit {
     public static void main(String[] args) throws Exception {
-        //创建流式处理
+        //todo 创建流式处理
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //设置全局并行度：不设置默认为全并行度；1为单线程执行
         env.setParallelism(4);
@@ -45,7 +48,7 @@ public class DWDTrafficBaseLogSplit {
         //设置操作hadoop的用户
         System.setProperty("HADOOP_USER_NAME","atguigu");
 
-        //从Kafka中读数据
+        //todo 从Kafka中读数据，ETL
         String topic = "topic_log";
         String groupId = "dwd_traffic_base_log_split_group";
         KafkaSource<String> kafkaSource = MyKafkaUtil.getKafkaSource(topic, groupId);
@@ -68,10 +71,10 @@ public class DWDTrafficBaseLogSplit {
         //process.print("主流");
         //process.getSideOutput(dirtyTag).print("这是脏数据侧流");
 
-        //将脏数据写入Kafka
+        //todo 将脏数据写入Kafka
         process.getSideOutput(dirtyTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_dirty","dirty"));
 
-        //修复数据：新老访客状态标记的修复——成因：前段埋点相关数据的缓存is_new被用户手动清理
+        //todo 修复数据：新老访客状态标记的修复——成因：前段埋点相关数据的缓存is_new被用户手动清理
         SingleOutputStreamOperator<JSONObject> map = process
                 .keyBy(s -> s.getJSONObject("common").getString("mid"))
                 .map(new RichMapFunction<JSONObject, JSONObject>() {
@@ -118,7 +121,7 @@ public class DWDTrafficBaseLogSplit {
                 });
                 //map.print("数据修复操作");
 
-        //分流：将数据按照：页面、曝光、启动、动作、错误日志进行分流
+        //todo 分流：将数据按照：页面、曝光、启动、动作、错误日志进行分流
         OutputTag<String> errTag = new OutputTag<String>("err_tag") {};
         OutputTag<String> startTag = new OutputTag<String>("start_tag") {};
         OutputTag<String> actionTag = new OutputTag<String>("action_tag") {};
@@ -179,14 +182,14 @@ public class DWDTrafficBaseLogSplit {
         pageDS.getSideOutput(actionTag).print("这是action侧流");
         pageDS.getSideOutput(startTag).print("这是start侧流");
 
-        //将各个流数据写入Kafka
+        //todo 将各个流数据写入Kafka
         pageDS.sinkTo(MyKafkaUtil.getKafkaSink("topic_main","main"));
         pageDS.getSideOutput(errTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_err","err"));
         pageDS.getSideOutput(displayTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_display","display"));
         pageDS.getSideOutput(actionTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_action","action"));
         pageDS.getSideOutput(startTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_start","start"));
 
-        //优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
+        //todo 优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
         new Thread(new Runnable() {
             final File f = new File("d:\\jinitaimei.txt");
             @Override

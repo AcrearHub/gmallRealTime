@@ -27,7 +27,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
 
     @Override
     public void open(Configuration parameters) throws Exception {
-        //从配置表中读取配置信息  将配置信息预加载到map集合中
+        //todo 从配置表中读取配置信息  将配置信息预加载到map集合中，防止出现主流先到，配置流后到的情况
         //注册驱动
         Class.forName("com.mysql.cj.jdbc.Driver");
         //建立连接
@@ -62,6 +62,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
 
     @Override
     public void processElement(JSONObject value, BroadcastProcessFunction<JSONObject, String, JSONObject>.ReadOnlyContext ctx, Collector<JSONObject> out) throws Exception {
+        //todo 处理主流
         //获取业务表名
         String table = value.getString("table");
         //获取广播状态
@@ -87,7 +88,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
         String[] split = sinkColumns.split(",");
         List<String> strings = Arrays.asList(split);
         Set<Map.Entry<String, Object>> entrySet = value.entrySet();
-        //todo 将JSONObject中每个键值对遍历出来，用迭代器，不能用while！！！
+        //将JSONObject中每个键值对遍历出来，用迭代器，不能用while！！！
        /* while (entrySet.iterator().hasNext()){
             Map.Entry<String, Object> next = entrySet.iterator().next();
             if (!strings.contains(next.getKey())){
@@ -99,6 +100,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
 
     @Override
     public void processBroadcastElement(String value, BroadcastProcessFunction<JSONObject, String, JSONObject>.Context ctx, Collector<JSONObject> out) throws Exception {
+        //todo 处理配置（广播）流
         JSONObject jsonObject = JSON.parseObject(value);
         String op = jsonObject.getString("op");
         BroadcastState<String, TableProcess> broadcastState = ctx.getBroadcastState(mapStateDescriptor);
@@ -129,6 +131,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
     }
 
     private void checkTable(String sinkTable, String sinkColumns, String sinkPk, String sinkExtend) {
+        //todo 事先完成建表操作
         //对一些null值进行处理
         if (sinkPk == null){
             sinkPk = "id";

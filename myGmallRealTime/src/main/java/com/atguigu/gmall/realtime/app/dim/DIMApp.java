@@ -30,7 +30,7 @@ import java.io.File;
  */
 public class DIMApp {
     public static void main(String[] args) throws Exception {
-        //创建流式处理
+        //todo 创建流式处理
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //设置全局并行度：不设置默认为全并行度；1为单线程执行
         env.setParallelism(4);
@@ -47,7 +47,7 @@ public class DIMApp {
         //设置操作hadoop的用户
         System.setProperty("HADOOP_USER_NAME","atguigu");
 
-        //从Kafka中读取数据
+        //todo 从Kafka中读取数据
         String topic = "topic_db";
         String groupId = "dim_app_group";   //声明消费主题、消费者组
         KafkaSource<String> kafkaSource = MyKafkaUtil.getKafkaSource(topic, groupId);
@@ -71,7 +71,7 @@ public class DIMApp {
                 });
         //jsonObject.print("写入数据");
 
-        //使用FlinkCDC读取配置表的数据
+        //todo 使用FlinkCDC读取配置表的数据
         MySqlSource<String> mySqlSource = MySqlSource.<String>builder()
                 .hostname("hadoop102")
                 .port(3306)
@@ -86,14 +86,14 @@ public class DIMApp {
         MapStateDescriptor<String, TableProcess> mapStateDescriptor = new MapStateDescriptor<>("mapStateDescriptor", String.class, TableProcess.class);
         BroadcastStream<String> broadcast = mySqlStrDs.broadcast(mapStateDescriptor);//对广播流的k：来源表名；v：表的每行
 
-        //将主流和广播流进行关联，再过滤出维度数据
+        //todo 将主流和广播流进行关联，再过滤出维度数据
         jsonObject
                 .connect(broadcast)
                 .process(new TableProcessFunction(mapStateDescriptor))
         //输出数据到hbase中
                 .addSink(new DimSinkFunction());
 
-        //优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
+        //todo 优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
         new Thread(new Runnable() {
             final File f = new File("d:\\jinitaimei.txt");
             @Override

@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.Set;
 
 /**
- * 将DIM数据写到Phoenix表中
+ * todo 将DIM数据写到Phoenix表中
  * 插入语句：upsert into 表空间.表名 (a,b,d) values ('aa','bb','cc')；
  */
 public class DimSinkFunction implements SinkFunction<JSONObject> {

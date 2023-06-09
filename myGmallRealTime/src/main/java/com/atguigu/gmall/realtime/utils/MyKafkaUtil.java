@@ -12,6 +12,9 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.OffsetResetStrategy;
 import org.apache.kafka.clients.producer.ProducerConfig;
 
+/**
+ * Kafka的输入、输出方法
+ */
 public class MyKafkaUtil {
     private static final String KAFKA_SERVER = "hadoop102:9092,hadoop03:9092,hadoop104:9092";
     public static KafkaSource<String> getKafkaSource(String topic,String groupId){
