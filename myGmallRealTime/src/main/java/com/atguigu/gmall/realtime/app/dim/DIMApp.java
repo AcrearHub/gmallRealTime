@@ -23,6 +23,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.util.Collector;
 
+import java.io.File;
+
 /**
  * DIM维度层处理
  */
@@ -90,6 +92,21 @@ public class DIMApp {
                 .process(new TableProcessFunction(mapStateDescriptor))
         //输出数据到hbase中
                 .addSink(new DimSinkFunction());
+
+        //优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
+        new Thread(new Runnable() {
+            final File f = new File("d:\\jinitaimei.txt");
+            @Override
+            public void run() {
+                System.out.println("监控开启");
+                while (true){
+                    if (f.exists()) {
+                        System.out.println("程序关闭，监控结束");
+                        System.exit(0);
+                    }
+                }
+            }
+        }).start();
 
         //启动程序执行
         env.execute();

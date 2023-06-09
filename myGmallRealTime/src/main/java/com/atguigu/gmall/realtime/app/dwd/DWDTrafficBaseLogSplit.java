@@ -23,6 +23,8 @@ import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
 
+import java.io.File;
+
 public class DWDTrafficBaseLogSplit {
     public static void main(String[] args) throws Exception {
         //创建流式处理
@@ -139,7 +141,7 @@ public class DWDTrafficBaseLogSplit {
                                     JSONObject page = value.getJSONObject("page");
                                     Long ts = value.getLong("ts");
                                     //判断是否有曝光信息（这里不是JSONObject，而是JSONArray），并移除
-                                    if (value.getJSONArray("displays") != null || value.getJSONArray("displays").size() > 0) {
+                                    if (value.getJSONArray("displays") != null && value.getJSONArray("displays").size() > 0) {
                                         for (int i = 0; i < value.getJSONArray("displays").size(); i++) {
                                             JSONObject displays = value.getJSONArray("displays").getJSONObject(i);
                                             //封装曝光信息
@@ -153,7 +155,7 @@ public class DWDTrafficBaseLogSplit {
                                         value.remove("displays");
                                     }
                                     //判断是否有动作信息（这里不是JSONObject，而是JSONArray），并移除
-                                    if (value.getJSONArray("actions") != null || value.getJSONArray("actions").size() > 0) {
+                                    if (value.getJSONArray("actions") != null && value.getJSONArray("actions").size() > 0) {
                                         for (int i = 0; i < value.getJSONArray("actions").size(); i++) {
                                             JSONObject actions = value.getJSONArray("actions").getJSONObject(i);
                                             //封装动作信息（由于这里本来自带ts，不需要上传）
@@ -183,6 +185,21 @@ public class DWDTrafficBaseLogSplit {
         pageDS.getSideOutput(displayTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_display","display"));
         pageDS.getSideOutput(actionTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_action","action"));
         pageDS.getSideOutput(startTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_start","start"));
+
+        //优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
+        new Thread(new Runnable() {
+            final File f = new File("d:\\jinitaimei.txt");
+            @Override
+            public void run() {
+                System.out.println("监控开启");
+                while (true){
+                    if (f.exists()) {
+                        System.out.println("程序关闭，监控结束");
+                        System.exit(0);
+                    }
+                }
+            }
+        }).start();
 
         //启动程序执行
         env.execute();

@@ -58,7 +58,7 @@ public class MyKafkaUtil {
                                 .setValueSerializationSchema(new SimpleStringSchema())  //设置序列化
                                 .build()
                 )
-                //精确一次👇
+                //精确一次👇（测试时无法做到，检查点可能会卡死，除非使用优雅关闭）
                 .setDeliveryGuarantee(DeliveryGuarantee.EXACTLY_ONCE)
                 //如果是精确一次，则必须设事务超时时间（默认1h）小于检查点超时时间（默认15min）：👇
                 .setProperty(ProducerConfig.TRANSACTION_TIMEOUT_CONFIG, 15 * 60 * 1000 + "")
