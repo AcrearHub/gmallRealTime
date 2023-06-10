@@ -88,7 +88,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
         String[] split = sinkColumns.split(",");
         List<String> strings = Arrays.asList(split);
         Set<Map.Entry<String, Object>> entrySet = value.entrySet();
-        //将JSONObject中每个键值对遍历出来，用迭代器，不能用while！！！
+        //将JSONObject中每个键值对遍历出来，用迭代器，不能用while！！！会死循环
        /* while (entrySet.iterator().hasNext()){
             Map.Entry<String, Object> next = entrySet.iterator().next();
             if (!strings.contains(next.getKey())){
