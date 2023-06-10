@@ -9,21 +9,14 @@ import com.atguigu.gmall.realtime.utils.MyKafkaUtil;
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import com.ververica.cdc.debezium.JsonDebeziumDeserializationSchema;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
-import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.common.state.MapStateDescriptor;
-import org.apache.flink.api.common.time.Time;
 import org.apache.flink.connector.kafka.source.KafkaSource;
-import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
-import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.datastream.BroadcastStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
-import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.util.Collector;
-
-import java.io.File;
 
 /**
  * DIM维度层处理
@@ -34,8 +27,10 @@ public class DIMApp {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //设置全局并行度：不设置默认为全并行度；1为单线程执行
         env.setParallelism(4);
+        /*
         //检查点相关设置
-        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE); //开启
+        //如果是精确一次，则必须开启检查点：👇
+        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
         env.getCheckpointConfig().setCheckpointTimeout(60000L); //超时时间
         env.getCheckpointConfig().setExternalizedCheckpointCleanup(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);  //Job取消后，保留检查点
         env.getCheckpointConfig().setMinPauseBetweenCheckpoints(2000L); //两个检查点间隔最短时间（防止检查点保存时间过长，导致连续备份检查点）
@@ -46,6 +41,7 @@ public class DIMApp {
         env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/checkpoint");
         //设置操作hadoop的用户
         System.setProperty("HADOOP_USER_NAME","atguigu");
+         */
 
         //todo 从Kafka中读取数据
         String topic = "topic_db";
@@ -92,21 +88,6 @@ public class DIMApp {
                 .process(new TableProcessFunction(mapStateDescriptor))
         //输出数据到hbase中
                 .addSink(new DimSinkFunction());
-
-        //todo 优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
-        new Thread(new Runnable() {
-            final File f = new File("d:\\jinitaimei.txt");
-            @Override
-            public void run() {
-                System.out.println("监控开启");
-                while (true){
-                    if (f.exists()) {
-                        System.out.println("程序关闭，监控结束");
-                        System.exit(0);
-                    }
-                }
-            }
-        }).start();
 
         //启动程序执行
         env.execute();

@@ -7,23 +7,16 @@ import com.atguigu.gmall.realtime.utils.MyKafkaUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.RichMapFunction;
-import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.common.state.ValueState;
 import org.apache.flink.api.common.state.ValueStateDescriptor;
-import org.apache.flink.api.common.time.Time;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.connector.kafka.source.KafkaSource;
-import org.apache.flink.runtime.state.hashmap.HashMapStateBackend;
-import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
-import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.util.Collector;
 import org.apache.flink.util.OutputTag;
-
-import java.io.File;
 
 /**
  * DWD流量域事务事实表处理
@@ -34,6 +27,7 @@ public class DWDTrafficBaseLogSplit {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //设置全局并行度：不设置默认为全并行度；1为单线程执行
         env.setParallelism(4);
+        /*
         //检查点相关设置
         //如果是精确一次，则必须开启检查点：👇
         env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
@@ -47,6 +41,7 @@ public class DWDTrafficBaseLogSplit {
         env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/checkpoint");
         //设置操作hadoop的用户
         System.setProperty("HADOOP_USER_NAME","atguigu");
+         */
 
         //todo 从Kafka中读数据，ETL
         KafkaSource<String> kafkaSource = MyKafkaUtil.getKafkaSource("topic_log", "dwd_traffic_base_log_split_group");
@@ -70,7 +65,7 @@ public class DWDTrafficBaseLogSplit {
         //process.getSideOutput(dirtyTag).print("这是脏数据侧流");
 
         //todo 将脏数据写入Kafka
-        process.getSideOutput(dirtyTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_dirty","dirty"));
+        process.getSideOutput(dirtyTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_dirty"));
 
         //todo 修复数据：新老访客状态标记的修复——成因：前段埋点相关数据的缓存is_new被用户手动清理
         SingleOutputStreamOperator<JSONObject> map = process
@@ -181,26 +176,11 @@ public class DWDTrafficBaseLogSplit {
         pageDS.getSideOutput(startTag).print("这是start侧流");
 
         //todo 将各个流数据写入Kafka
-        pageDS.sinkTo(MyKafkaUtil.getKafkaSink("topic_page","page"));
-        pageDS.getSideOutput(errTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_err","err"));
-        pageDS.getSideOutput(displayTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_display","display"));
-        pageDS.getSideOutput(actionTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_action","action"));
-        pageDS.getSideOutput(startTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_start","start"));
-
-        //todo 优雅关闭：若d盘下有鸡你太美.txt，则结束所有进程
-        new Thread(new Runnable() {
-            final File f = new File("d:\\jinitaimei.txt");
-            @Override
-            public void run() {
-                System.out.println("监控开启");
-                while (true){
-                    if (f.exists()) {
-                        System.out.println("程序关闭，监控结束");
-                        System.exit(0);
-                    }
-                }
-            }
-        }).start();
+        pageDS.sinkTo(MyKafkaUtil.getKafkaSink("topic_page"));
+        pageDS.getSideOutput(errTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_err"));
+        pageDS.getSideOutput(displayTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_display"));
+        pageDS.getSideOutput(actionTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_action"));
+        pageDS.getSideOutput(startTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_start"));
 
         //启动程序执行
         env.execute();
