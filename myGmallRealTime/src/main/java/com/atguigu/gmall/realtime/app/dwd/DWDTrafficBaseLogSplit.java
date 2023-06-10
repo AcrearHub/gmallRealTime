@@ -49,9 +49,7 @@ public class DWDTrafficBaseLogSplit {
         System.setProperty("HADOOP_USER_NAME","atguigu");
 
         //todo 从Kafka中读数据，ETL
-        String topic = "topic_log";
-        String groupId = "dwd_traffic_base_log_split_group";
-        KafkaSource<String> kafkaSource = MyKafkaUtil.getKafkaSource(topic, groupId);
+        KafkaSource<String> kafkaSource = MyKafkaUtil.getKafkaSource("topic_log", "dwd_traffic_base_log_split_group");
         DataStreamSource<String> kafkaStrDs = env.fromSource(kafkaSource, WatermarkStrategy.noWatermarks(), "kafka_source");
         //对流中数据进行类型转换：json->jsonObj，并进行ETL，定义标签，形成主流、侧流
         OutputTag<String> dirtyTag = new OutputTag<String>("dirty_tag"){};  //匿名内部类：防止泛型擦除，下同
@@ -183,7 +181,7 @@ public class DWDTrafficBaseLogSplit {
         pageDS.getSideOutput(startTag).print("这是start侧流");
 
         //todo 将各个流数据写入Kafka
-        pageDS.sinkTo(MyKafkaUtil.getKafkaSink("topic_main","main"));
+        pageDS.sinkTo(MyKafkaUtil.getKafkaSink("topic_page","page"));
         pageDS.getSideOutput(errTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_err","err"));
         pageDS.getSideOutput(displayTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_display","display"));
         pageDS.getSideOutput(actionTag).sinkTo(MyKafkaUtil.getKafkaSink("topic_action","action"));
