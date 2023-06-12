@@ -1,4 +1,4 @@
-package com.atguigu.gmall.realtime.app.dwd;
+package com.atguigu.gmall.realtime.app.dwd.log;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -27,21 +27,7 @@ public class DWDTrafficBaseLogSplit {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //设置全局并行度：不设置默认为全并行度；1为单线程执行
         env.setParallelism(4);
-        /*
-        //检查点相关设置
-        //如果是精确一次，则必须开启检查点：👇
-        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
-        env.getCheckpointConfig().setCheckpointTimeout(60000L); //超时时间
-        env.getCheckpointConfig().setExternalizedCheckpointCleanup(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);  //Job取消后，保留检查点
-        env.getCheckpointConfig().setMinPauseBetweenCheckpoints(2000L); //两个检查点间隔最短时间（防止检查点保存时间过长，导致连续备份检查点）
-//      env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3,3000L));   //重启策略：出错时最多重启3次，每次间隔3s
-        env.setRestartStrategy(RestartStrategies.failureRateRestart(3, Time.days(30),Time.seconds(3))); //重启策略：每30天有3次机会重启，每次重启间隔3s
-        //设置状态后端
-        env.setStateBackend(new HashMapStateBackend());
-        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/checkpoint");
-        //设置操作hadoop的用户
-        System.setProperty("HADOOP_USER_NAME","atguigu");
-         */
+        //检查点相关设置（略）
 
         //todo 从Kafka中读数据，ETL
         KafkaSource<String> kafkaSource = MyKafkaUtil.getKafkaSource("topic_log", "dwd_traffic_base_log_split_group");

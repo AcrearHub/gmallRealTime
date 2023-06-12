@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDInteractionCommentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradeCancelDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradeCartAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradeOrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradeOrderRefund.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradeOrderRefundSuc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradePayDetailSuc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/TableProcessFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/TableProcessFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/DWDTrafficBaseLogSplit.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/log/DWDTrafficBaseLogSplit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,30 +62,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editing.templates",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.DWDTrafficBaseLogSplit">
-    <configuration name="DIMApp (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dim.DIMApp" />
+}]]></component>
+  <component name="RunManager" selected="Application.DWDTradePayDetailSuc">
+    <configuration name="DWDTradeCartAdd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradeCartAdd" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dim.*" />
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DIMApp (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dim.DIMApp" />
+    <configuration name="DWDTradeOrderDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradeOrderDetail" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dim.*" />
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DIMApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dim.DIMApp" />
+    <configuration name="DWDTradeOrderRefund" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradeOrderRefund" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dim.*" />
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,12 +120,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWDTrafficBaseLogSplit (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.DWDTrafficBaseLogSplit" />
+    <configuration name="DWDTradeOrderRefundSuc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradeOrderRefundSuc" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.*" />
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DWDTradePayDetailSuc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradePayDetailSuc" />
+      <module name="myGmallRealTime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,11 +147,11 @@
       </method>
     </configuration>
     <configuration name="DWDTrafficBaseLogSplit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.DWDTrafficBaseLogSplit" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.log.DWDTrafficBaseLogSplit" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.*" />
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.log.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DWDTrafficBaseLogSplit" />
-        <item itemvalue="Application.DIMApp" />
-        <item itemvalue="Application.DWDTrafficBaseLogSplit (3)" />
-        <item itemvalue="Application.DIMApp (2)" />
-        <item itemvalue="Application.DIMApp (1)" />
+        <item itemvalue="Application.DWDTradePayDetailSuc" />
+        <item itemvalue="Application.DWDTradeOrderDetail" />
+        <item itemvalue="Application.DWDTradeOrderRefundSuc" />
+        <item itemvalue="Application.DWDTradeOrderRefund" />
+        <item itemvalue="Application.DWDTradeCartAdd" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +218,10 @@
       <workItem from="1686356512373" duration="3083000" />
       <workItem from="1686360018412" duration="10520000" />
       <workItem from="1686380953134" duration="2404000" />
-      <workItem from="1686395572570" duration="8997000" />
+      <workItem from="1686395572570" duration="9825000" />
+      <workItem from="1686529363280" duration="530000" />
+      <workItem from="1686529909242" duration="11371000" />
+      <workItem from="1686542296572" duration="26990000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1686315184594</created>
@@ -233,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686403234679</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1">
+      <created>1686405912331</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686405912331</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
