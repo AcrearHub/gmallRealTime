@@ -51,7 +51,7 @@ public class DWSTrafficSourceKeywordPageViewWindow {
         streamTableEnvironment.createTemporaryView("split_table",splitTable);
 
         //todo 分组、开窗、聚合计算
-        Table table = streamTableEnvironment
+        Table reduceTable = streamTableEnvironment
                 .sqlQuery(
                         "SELECT\n" +
                                 "  DATE_FORMAT(TUMBLE_START(row_time, INTERVAL '10' SECOND),'yyyy-MM-dd HH:mm:ss') stt,\n" +
@@ -64,7 +64,7 @@ public class DWSTrafficSourceKeywordPageViewWindow {
                                 "  TUMBLE(row_time, INTERVAL '10' second),\n" +
                                 "  keyword"
                 );
-        streamTableEnvironment.createTemporaryView("reduce_table",table);
+        streamTableEnvironment.createTemporaryView("reduce_table", reduceTable);
         streamTableEnvironment.executeSql("select * from reduce_table").print();
 
         //todo 将动态表转为流
