@@ -84,16 +84,18 @@ public class BaseDbApp {
 //                            @Override
 //                            public void processElement(JSONObject value, ProcessFunction<JSONObject, String>.Context ctx, Collector<String> out) throws Exception {
 //                                if ("dwd_user_register".equals(value.getString("sink_table"))) {
+//                                    value.remove("sink_table");
 //                                    ctx.output(zhuceTag, value.toJSONString());
-//                                }
-//                                if ("dwd_tool_coupon_use".equals(value.getString("sink_table"))) {
+//                                } else if ("dwd_tool_coupon_use".equals(value.getString("sink_table"))) {
+//                                    value.remove("sink_table");
 //                                    ctx.output(shiyongTag, value.toJSONString());
-//                                }
-//                                if ("dwd_interaction_favor_add".equals(value.getString("sink_table"))) {
+//                                } else if ("dwd_interaction_favor_add".equals(value.getString("sink_table"))) {
+//                                    value.remove("sink_table");
 //                                    ctx.output(shoucangTag, value.toJSONString());
+//                                } else {
+//                                    value.remove("sink_table");
+//                                    out.collect(value.toJSONString());
 //                                }
-//                                out.collect(value.toJSONString());
-//                                value.remove("sink_table");
 //                            }
 //                        }
 //                );

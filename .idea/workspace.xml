@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/BaseDbApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTrafficSourceKeywordPageViewWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/KeyWordUDTF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/TableProcessFunciont_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/KeyWordUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/BaseDbApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/BaseDbApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,12 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWDTradePayDetailSuc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradePayDetailSuc" />
+    <configuration name="DWDTrafficBaseLogSplit (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.log.DWDTrafficBaseLogSplit" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.log.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,10 +141,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.DWSTrafficSourceKeywordPageViewWindow" />
-        <item itemvalue="Application.DWDTrafficBaseLogSplit" />
+        <item itemvalue="Application.DWDTrafficBaseLogSplit (1)" />
         <item itemvalue="Application.BaseDbApp" />
+        <item itemvalue="Application.DWDTrafficBaseLogSplit" />
         <item itemvalue="Application.BaseDbApp (1)" />
-        <item itemvalue="Application.DWDTradePayDetailSuc" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +209,7 @@
       <workItem from="1686636390215" duration="19176000" />
       <workItem from="1686664850388" duration="5000" />
       <workItem from="1686664870279" duration="1599000" />
-      <workItem from="1686702175255" duration="1015000" />
+      <workItem from="1686702175255" duration="3362000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1686315184594</created>
@@ -267,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686576369312</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1">
+      <created>1686703207195</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686703207196</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1">
+      <created>1686703275834</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686703275834</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
