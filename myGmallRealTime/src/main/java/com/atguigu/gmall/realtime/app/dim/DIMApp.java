@@ -56,7 +56,7 @@ public class DIMApp {
                         try {
                             JSONObject jsonObject = JSON.parseObject(value);
                             String type = jsonObject.getString("type");
-                            //将开始和结束的type过滤掉
+                            //将开始和结束的type过滤掉（历史）
                             if (!"bootstrap-start".equals(type) && !"bootstrap-complete".equals(type)) {
                                 out.collect(jsonObject);
                             }

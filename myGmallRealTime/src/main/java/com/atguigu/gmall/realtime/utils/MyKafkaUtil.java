@@ -124,4 +124,13 @@ public class MyKafkaUtil {
                 "   'lookup.partial-cache.expire-after-write' = '1 hour',\n" +
                 "   'lookup.partial-cache.expire-after-access' = '1 hour')";
     }
+
+    public static <T>KafkaSink<T> getKafkaSinkBySchema(KafkaRecordSerializationSchema<T> krs) {
+        KafkaSink<T> kafkaSink = KafkaSink.<T>builder()
+                .setBootstrapServers(KAFKA_SERVER)
+                //自定义序列化器
+                .setRecordSerializer(krs)
+                .build();
+        return kafkaSink;
+    }
 }
