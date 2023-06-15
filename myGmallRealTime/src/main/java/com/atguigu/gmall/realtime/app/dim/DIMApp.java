@@ -87,7 +87,7 @@ public class DIMApp {
                 .connect(broadcast)
                 .process(new TableProcessFunction(mapStateDescriptor))
         //输出数据到hbase中
-                .addSink(new DimSinkFunction());
+                .addSink(new DimSinkFunction());    //不能用JDBCSink的sink方法，它只能往一张表写
 
         //启动程序执行
         env.execute();

@@ -1,7 +1,10 @@
 package com.atguigu.gmall.realtime.app.dws;
 
+import com.atguigu.gmall.realtime.beans.KeyWordBean;
 import com.atguigu.gmall.realtime.fuc.KeyWordUDTF;
+import com.atguigu.gmall.realtime.utils.MyClickhouseUtil;
 import com.atguigu.gmall.realtime.utils.MyKafkaUtil;
+import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
@@ -64,12 +67,13 @@ public class DWSTrafficSourceKeywordPageViewWindow {
                                 "  TUMBLE(row_time, INTERVAL '10' second),\n" +
                                 "  keyword"
                 );
-        streamTableEnvironment.createTemporaryView("reduce_table", reduceTable);
-        streamTableEnvironment.executeSql("select * from reduce_table").print();
 
         //todo 将动态表转为流
+        DataStream<KeyWordBean> keyWordBeanDataStream = streamTableEnvironment.toDataStream(reduceTable, KeyWordBean.class);//仅追加，并声明转换后的类型
+        keyWordBeanDataStream.print("关键词搜索次数");
 
         //todo 输出到CK
+        keyWordBeanDataStream.addSink(MyClickhouseUtil.getSinkFunction("insert into dws_traffic_keyword_page_view_window values(?,?,?,?,?)"));
 
         //启动程序执行
         env.execute();

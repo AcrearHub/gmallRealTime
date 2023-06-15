@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="">
+    <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTrafficVcChArIsNewPageViewWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/KeyWordBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TrafficPageViewBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TransientSink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyClickhouseUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/BaseDbApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/BaseDbApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTrafficSourceKeywordPageViewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTrafficSourceKeywordPageViewWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/common/GmallConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/common/GmallConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -46,7 +54,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Qlkz47s090OLlEI0hL3Bes2pgi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -72,46 +80,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.DWSTrafficSourceKeywordPageViewWindow">
-    <configuration name="BaseDbApp (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.BaseDbApp" />
-      <module name="myGmallRealTime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BaseDbApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.BaseDbApp" />
-      <module name="myGmallRealTime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DWDTrafficBaseLogSplit (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.log.DWDTrafficBaseLogSplit" />
-      <module name="myGmallRealTime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.log.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.DWSTrafficVcChArIsNewPageViewWindow">
     <configuration name="DWDTrafficBaseLogSplit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.log.DWDTrafficBaseLogSplit" />
       <module name="myGmallRealTime" />
@@ -125,8 +94,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWSTrafficSourceKeywordPageViewWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficSourceKeywordPageViewWindow" />
+    <configuration name="DWSTrafficVcChArIsNewPageViewWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficVcChArIsNewPageViewWindow" />
+      <module name="myGmallRealTime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DWSTrafficVcChArIsNewPageViewWindow (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficVcChArIsNewPageViewWindow" />
+      <module name="myGmallRealTime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DWSTrafficVcChArIsNewPageViewWindow (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficVcChArIsNewPageViewWindow" />
+      <module name="myGmallRealTime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DWSTrafficVcChArIsNewPageViewWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficVcChArIsNewPageViewWindow" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
@@ -140,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DWSTrafficSourceKeywordPageViewWindow" />
-        <item itemvalue="Application.DWDTrafficBaseLogSplit (1)" />
-        <item itemvalue="Application.BaseDbApp" />
+        <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow" />
+        <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow (3)" />
         <item itemvalue="Application.DWDTrafficBaseLogSplit" />
-        <item itemvalue="Application.BaseDbApp (1)" />
+        <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow (2)" />
+        <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +217,9 @@
       <workItem from="1686636390215" duration="19176000" />
       <workItem from="1686664850388" duration="5000" />
       <workItem from="1686664870279" duration="1599000" />
-      <workItem from="1686702175255" duration="3362000" />
+      <workItem from="1686702175255" duration="22682000" />
+      <workItem from="1686742328586" duration="7437000" />
+      <workItem from="1686792601125" duration="329000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1686315184594</created>
@@ -274,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686703275834</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1">
+      <created>1686705547470</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686705547470</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
