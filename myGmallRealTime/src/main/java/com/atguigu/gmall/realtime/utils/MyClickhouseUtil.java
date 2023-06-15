@@ -11,7 +11,7 @@ import org.apache.flink.streaming.api.functions.sink.SinkFunction;
 import java.lang.reflect.Field;
 
 /**
- * Clickhouse工具类
+ * Clickhouse工具类，要声明泛型方法，提供传入流格式
  */
 public class MyClickhouseUtil {
     public static <T>SinkFunction<T> getSinkFunction(String sql){

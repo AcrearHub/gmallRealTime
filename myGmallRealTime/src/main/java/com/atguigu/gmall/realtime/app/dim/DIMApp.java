@@ -78,7 +78,7 @@ public class DIMApp {
                 .deserializer(new JsonDebeziumDeserializationSchema()) // converts SourceRecord to JSON String
                 .build();
         DataStreamSource<String> mySqlStrDs = env.fromSource(mySqlSource, WatermarkStrategy.noWatermarks(), "MySql Source");
-        //对配置流进行广播：先建立配置描述器（只要名称相同，就是同一个描述器，通过key来获取需要更改的value）
+        //对配置流进行广播：先建立配置描述器（只能是map）（只要名称相同，就是同一个描述器，通过key来获取需要更改的value）
         MapStateDescriptor<String, TableProcess> mapStateDescriptor = new MapStateDescriptor<>("mapStateDescriptor", String.class, TableProcess.class);
         BroadcastStream<String> broadcast = mySqlStrDs.broadcast(mapStateDescriptor);//对广播流的k：来源表名；v：表的每行
 

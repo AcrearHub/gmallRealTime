@@ -24,7 +24,7 @@ public class DWSTrafficSourceKeywordPageViewWindow {
         //注册自定义函数
         streamTableEnvironment.createTemporarySystemFunction("ik_analyze", KeyWordUDTF.class);
 
-        //todo 从Kafka中读取DWD流量域事务事实表处理中的页面日志
+        //todo 从Kafka中读取DWD流量域事务事实表处理中的页面日志，设置Watermark、Timestamp，形成表
         streamTableEnvironment
                 .executeSql(
                         "CREATE TABLE page_log (\n" +
@@ -36,7 +36,7 @@ public class DWSTrafficSourceKeywordPageViewWindow {
                                 ") " + MyKafkaUtil.getKafkaDDL("topic_page", "dws_traffic_source_keyword_page_view_window")
                 );
 
-        //todo 过滤出搜索行为，设置Watermark、Timestamp，形成表
+        //todo 过滤出搜索行为
         Table searchTable = streamTableEnvironment
                 .sqlQuery(
                         "select\n" +
@@ -49,7 +49,7 @@ public class DWSTrafficSourceKeywordPageViewWindow {
         Table splitTable = streamTableEnvironment
                 .sqlQuery(
                         "SELECT  keyword,row_time FROM search_table,\n" +
-                                "   LATERAL TABLE(ik_analyze(full_word)) t(keyword)"
+                                "   LATERAL TABLE(ik_analyze(full_word)) t(keyword)"    //格式类似炸裂，t为table别名，keyword表示t中只有一个字段keyword
                 );
         streamTableEnvironment.createTemporaryView("split_table",splitTable);
 
@@ -68,8 +68,8 @@ public class DWSTrafficSourceKeywordPageViewWindow {
                                 "  keyword"
                 );
 
-        //todo 将动态表转为流
-        DataStream<KeyWordBean> keyWordBeanDataStream = streamTableEnvironment.toDataStream(reduceTable, KeyWordBean.class);//仅追加，并声明转换后的类型
+        //todo 将动态表转为流：由于flink sql不支持输出到ck，只能用JDBCSink
+        DataStream<KeyWordBean> keyWordBeanDataStream = streamTableEnvironment.toDataStream(reduceTable, KeyWordBean.class);//仅追加流，并声明转换后的类型
         keyWordBeanDataStream.print("关键词搜索次数");
 
         //todo 输出到CK

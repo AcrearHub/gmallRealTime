@@ -75,7 +75,7 @@ public class MyKafkaUtil {
                 "  `ts` string,\n" +
                 "  `data` MAP<string, string>,\n" +
                 "  `old` MAP<string, string>,\n" +
-                "  `proc_time` as proctime()\n" +
+                "  `proc_time` as proctime()\n" +   //通过内置函数获取处理时间
                 ") " + getKafkaDDL("topic_db", groupId);
     }
 

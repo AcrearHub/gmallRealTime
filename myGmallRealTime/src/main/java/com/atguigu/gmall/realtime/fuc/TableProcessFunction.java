@@ -36,7 +36,6 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
         //获取数据库操作对象
         String sql = "select * from gmall_realtime_config.table_process where sink_type='dim'";
         PreparedStatement prepareStatement = connection.prepareStatement(sql);
-        //在resource中设置schema到namespace的映射
         //执行SQL语句
         ResultSet resultSet = prepareStatement.executeQuery();
 
