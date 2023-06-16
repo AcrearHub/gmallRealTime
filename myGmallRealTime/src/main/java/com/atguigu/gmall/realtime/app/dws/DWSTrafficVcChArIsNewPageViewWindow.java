@@ -117,7 +117,7 @@ public class DWSTrafficVcChArIsNewPageViewWindow {
                             value1.setDurSum(value1.getDurSum() + value2.getDurSum());
                             return value1;
                         },
-                        //将聚合后的数据补全：stt、edt、ts
+                        //将聚合后的数据补全：stt、edt、ts（这里的ts表示处理时间，将之前传入的ts覆盖掉）
                         new ProcessWindowFunction<TrafficPageViewBean, TrafficPageViewBean, Tuple4<String, String, String, String>, TimeWindow>() {
                             @Override
                             public void process(Tuple4<String, String, String, String> stringStringStringStringTuple4, ProcessWindowFunction<TrafficPageViewBean, TrafficPageViewBean, Tuple4<String, String, String, String>, TimeWindow>.Context context, Iterable<TrafficPageViewBean> elements, Collector<TrafficPageViewBean> out) throws Exception {

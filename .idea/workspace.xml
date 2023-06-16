@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTrafficHomeDetailPageViewWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSUserUserLoginWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TrafficHomeDetailPageViewBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/UserLoginBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTrafficSourceKeywordPageViewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTrafficSourceKeywordPageViewWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/TableProcessFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/TableProcessFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyClickhouseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyClickhouseUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.DWSTrafficVcChArIsNewPageViewWindow">
+  <component name="RunManager" selected="Application.DWSTrafficHomeDetailPageViewWindow (1)">
     <configuration name="DWDTrafficBaseLogSplit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.log.DWDTrafficBaseLogSplit" />
       <module name="myGmallRealTime" />
@@ -92,8 +91,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWSTrafficVcChArIsNewPageViewWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficVcChArIsNewPageViewWindow" />
+    <configuration name="DWSTrafficHomeDetailPageViewWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficHomeDetailPageViewWindow" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
@@ -105,8 +104,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWSTrafficVcChArIsNewPageViewWindow (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficVcChArIsNewPageViewWindow" />
+    <configuration name="DWSTrafficHomeDetailPageViewWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTrafficHomeDetailPageViewWindow" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
@@ -146,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DWSTrafficHomeDetailPageViewWindow (1)" />
+        <item itemvalue="Application.DWDTrafficBaseLogSplit" />
+        <item itemvalue="Application.DWSTrafficHomeDetailPageViewWindow" />
         <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow" />
         <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow (3)" />
-        <item itemvalue="Application.DWDTrafficBaseLogSplit" />
-        <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow (2)" />
-        <item itemvalue="Application.DWSTrafficVcChArIsNewPageViewWindow (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +218,8 @@
       <workItem from="1686742328586" duration="7437000" />
       <workItem from="1686792601125" duration="7059000" />
       <workItem from="1686800222970" duration="6111000" />
-      <workItem from="1686809614058" duration="1941000" />
+      <workItem from="1686809614058" duration="1968000" />
+      <workItem from="1686876713597" duration="9758000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1686315184594</created>
@@ -298,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686793223219</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1">
+      <created>1686811652177</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686811652177</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
