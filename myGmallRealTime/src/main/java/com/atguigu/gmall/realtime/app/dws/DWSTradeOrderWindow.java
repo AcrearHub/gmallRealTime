@@ -38,7 +38,7 @@ public class DWSTradeOrderWindow {
         //todo 从Kafka中读取DWS交易域支付各窗口汇总表
         SingleOutputStreamOperator<TradeOrderBean> reduce = env
                 .fromSource(MyKafkaUtil.getKafkaSource("topic_dwd_trade_order_detail", "dws_trade_order_window"), WatermarkStrategy.noWatermarks(), "kafka_source")
-                //todo 对数据进行过滤null后，类型转换jsonStr -> jsonObj
+                //todo 过滤空消息，对数据进行类型转换jsonStr -> jsonObj
                 .process(
                         new ProcessFunction<String, JSONObject>() {
                             @Override

@@ -78,6 +78,9 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject,St
             //补充sink_table（注意和上面的顺序，防止补充的数据被删除）
             String sinkTable = tableProcess.getSinkTable();
             data.put("sink_table",sinkTable);
+            //补充操作类型，以便后面redis中使用
+            String type = value.getString("type");
+            data.put("type",type);
             //传递数据
             out.collect(data);
         }

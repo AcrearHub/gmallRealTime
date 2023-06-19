@@ -2,6 +2,7 @@ package com.atguigu.gmall.realtime.fuc;
 
 import com.alibaba.fastjson.JSONObject;
 import com.atguigu.gmall.realtime.common.GmallConfig;
+import com.atguigu.gmall.realtime.utils.DIMUtil;
 import com.atguigu.gmall.realtime.utils.PhoenixUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.streaming.api.functions.sink.SinkFunction;
@@ -18,6 +19,8 @@ public class DimSinkFunction implements SinkFunction<JSONObject> {
     public void invoke(JSONObject value, Context context) {
         String sinkTable = value.getString("sink_table");
         value.remove("sink_table");
+        String type = value.getString("type");
+        value.remove("type");
         //虽然这里的Set是无序的，但由于是从JSONObject实现的Map中拿到的数据，所以是有序的
         Set<String> keySet = value.keySet();
         Collection<Object> values = value.values();
@@ -28,5 +31,10 @@ public class DimSinkFunction implements SinkFunction<JSONObject> {
         System.out.println("upsert语句：" + upsertSql);
         //执行语句（JDBC）
         PhoenixUtil.executeSql(upsertSql);
+
+        //若维度表发生update变化，将Redis的缓存数据删除
+        if ("update".equals(type)) {
+            DIMUtil.deleteCache(sinkTable,value.getString("id"));
+        }
     }
 }

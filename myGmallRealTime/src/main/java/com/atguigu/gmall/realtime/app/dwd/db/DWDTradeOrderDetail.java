@@ -49,7 +49,7 @@ public class DWDTradeOrderDetail {
                 );
         streamTableEnvironment.createTemporaryView("order_detail",orderDetail);
 
-        //订单表
+        //订单表（join）
         Table orderInfo = streamTableEnvironment
                 .sqlQuery(
                         "select \n" +
@@ -62,7 +62,7 @@ public class DWDTradeOrderDetail {
                 );
         streamTableEnvironment.createTemporaryView("order_info",orderInfo);
 
-        //活动表
+        //活动表（left join）
         Table orderDetailActivity = streamTableEnvironment
                 .sqlQuery(
                         "select \n" +
@@ -75,7 +75,7 @@ public class DWDTradeOrderDetail {
                 );
         streamTableEnvironment.createTemporaryView("order_detail_activity",orderDetailActivity);
 
-        //优惠表
+        //优惠表（left join）
         Table orderDetailCoupon = streamTableEnvironment
                 .sqlQuery(
                         "select\n" +
