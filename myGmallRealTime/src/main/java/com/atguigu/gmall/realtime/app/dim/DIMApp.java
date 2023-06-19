@@ -38,7 +38,7 @@ public class DIMApp {
         env.setRestartStrategy(RestartStrategies.failureRateRestart(3, Time.days(30),Time.seconds(3))); //重启策略：每30天有3次机会重启，每次重启间隔3s
         //设置状态后端
         env.setStateBackend(new HashMapStateBackend());
-        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/checkpoint");
+        env.getCheckpointConfig().setCheckpointStorage("hdfs://hadoop102:8020/checkpoint");    //高可用需要将配置文件放到resources中
         //设置操作hadoop的用户
         System.setProperty("HADOOP_USER_NAME","atguigu");
          */

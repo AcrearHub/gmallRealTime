@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TradeSkuOrderBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/DIMUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/RedisUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeProvinceOrderWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeTrademarkCategoryUserRefundWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/DimJoinFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TradeProvinceOrderBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TradeTrademarkCategoryUserRefundBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/DimAsyncFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/ThreadPoolUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradeOrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/DWDTradeOrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeOrderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeOrderWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeSkuOrderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeSkuOrderWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/DimSinkFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/DimSinkFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/TableProcessFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/TableProcessFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/PhoenixUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/PhoenixUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/DIMUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/DIMUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -84,7 +84,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.DWSTradeSkuOrderWindow">
+  <component name="RunManager" selected="Application.DWSTradeTrademarkCategoryUserRefundWindow">
     <configuration name="DWDTradeOrderDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradeOrderDetail" />
       <module name="myGmallRealTime" />
@@ -98,21 +98,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWDTradePayDetailSuc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradePayDetailSuc" />
-      <module name="myGmallRealTime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DWSTradeOrderWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeOrderWindow" />
+    <configuration name="DWSTradeProvinceOrderWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeProvinceOrderWindow" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
@@ -124,21 +111,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWSTradePaymentSucWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradePaymentSucWindow" />
-      <module name="myGmallRealTime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DWSTradeSkuOrderWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DWSTradeSkuOrderWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeSkuOrderWindow" />
+      <module name="myGmallRealTime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DWSTradeSkuOrderWindow (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeSkuOrderWindow" />
+      <module name="myGmallRealTime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DWSTradeTrademarkCategoryUserRefundWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeTrademarkCategoryUserRefundWindow" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DWSTradeSkuOrderWindow" />
+        <item itemvalue="Application.DWSTradeTrademarkCategoryUserRefundWindow" />
         <item itemvalue="Application.DWDTradeOrderDetail" />
-        <item itemvalue="Application.DWSTradeOrderWindow" />
-        <item itemvalue="Application.DWSTradePaymentSucWindow" />
-        <item itemvalue="Application.DWDTradePayDetailSuc" />
+        <item itemvalue="Application.DWSTradeProvinceOrderWindow" />
+        <item itemvalue="Application.DWSTradeSkuOrderWindow (2)" />
+        <item itemvalue="Application.DWSTradeSkuOrderWindow (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -232,6 +232,8 @@
       <workItem from="1686971122210" duration="14188000" />
       <workItem from="1687056590889" duration="1852000" />
       <workItem from="1687073451946" duration="600000" />
+      <workItem from="1687134400694" duration="13139000" />
+      <workItem from="1687153780886" duration="18190000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1686315184594</created>
@@ -331,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686961935508</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="1">
+      <created>1687134464235</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687134464235</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

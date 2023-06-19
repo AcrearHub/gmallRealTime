@@ -68,7 +68,7 @@ public class DIMUtil {
         //创建Jedis客户端
         Jedis jedis = null; //K
         String jedisStr = null; //V
-        JSONObject dimJSONObject = null;    //V的具体值
+        JSONObject dimJSONObject = null;    //（要）保存的数据
 
         try {
             jedis = RedisUtil.getJedis();
