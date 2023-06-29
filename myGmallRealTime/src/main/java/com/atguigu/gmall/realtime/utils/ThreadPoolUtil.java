@@ -22,6 +22,8 @@ public class ThreadPoolUtil {
                             new LinkedBlockingDeque<Runnable>(Integer.MAX_VALUE));
                 }
             }
+        } else {
+            //其它代码
         }
         return threadPoolExecutor;
     }

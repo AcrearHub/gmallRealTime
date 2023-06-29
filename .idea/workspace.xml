@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeProvinceOrderWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeTrademarkCategoryUserRefundWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/DimJoinFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TradeProvinceOrderBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/beans/TradeTrademarkCategoryUserRefundBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/DimAsyncFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/ThreadPoolUtil.java" afterDir="false" />
+    <list default="true" id="b23eeffb-4dbc-4bd6-adde-c485bb8c6dc6" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/fuc/MyTriggerFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/FlinkCDCUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MySqlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dim/DIMApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/BaseDbApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dwd/db/BaseDbApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeCartAddUuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeCartAddUuWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeSkuOrderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/app/dws/DWSTradeSkuOrderWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/DIMUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/DIMUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myGmallRealTime/src/main/java/com/atguigu/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,25 +66,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "D:/Atguigu/05_Code/gmall-publisher",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.DWSTradeTrademarkCategoryUserRefundWindow">
+}]]></component>
+  <component name="RunManager" selected="Application.test">
+    <configuration name="BaseDbApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.BaseDbApp" />
+      <module name="myGmallRealTime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DWDTradeOrderDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.DWDTradeOrderDetail" />
       <module name="myGmallRealTime" />
@@ -111,8 +125,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWSTradeSkuOrderWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeSkuOrderWindow" />
+    <configuration name="DWSUserUserRegisterWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSUserUserRegisterWindow" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
@@ -124,25 +138,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWSTradeSkuOrderWindow (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeSkuOrderWindow" />
-      <module name="myGmallRealTime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DWSTradeTrademarkCategoryUserRefundWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dws.DWSTradeTrademarkCategoryUserRefundWindow" />
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.realtime.app.dwd.db.test" />
       <module name="myGmallRealTime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dws.*" />
+          <option name="PATTERN" value="com.atguigu.gmall.realtime.app.dwd.db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DWSTradeTrademarkCategoryUserRefundWindow" />
-        <item itemvalue="Application.DWDTradeOrderDetail" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.DWSTradeProvinceOrderWindow" />
-        <item itemvalue="Application.DWSTradeSkuOrderWindow (2)" />
-        <item itemvalue="Application.DWSTradeSkuOrderWindow (1)" />
+        <item itemvalue="Application.DWDTradeOrderDetail" />
+        <item itemvalue="Application.DWSUserUserRegisterWindow" />
+        <item itemvalue="Application.BaseDbApp" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +241,82 @@
       <workItem from="1687056590889" duration="1852000" />
       <workItem from="1687073451946" duration="600000" />
       <workItem from="1687134400694" duration="13139000" />
-      <workItem from="1687153780886" duration="18190000" />
+      <workItem from="1687153780886" duration="19068000" />
+      <workItem from="1687220842799" duration="4153000" />
+      <workItem from="1687231346498" duration="390000" />
+      <workItem from="1687233247347" duration="1198000" />
+      <workItem from="1687235508088" duration="5324000" />
+      <workItem from="1687241070987" duration="1722000" />
+      <workItem from="1687353146245" duration="148000" />
+      <workItem from="1687353319462" duration="124000" />
+      <workItem from="1687354137659" duration="237000" />
+      <workItem from="1687400073181" duration="334000" />
+      <workItem from="1687400934496" duration="1278000" />
+      <workItem from="1687403355468" duration="6000" />
+      <workItem from="1687603186533" duration="229000" />
+      <workItem from="1687603425243" duration="2694000" />
+      <workItem from="1687653057937" duration="1768000" />
+      <workItem from="1687660167143" duration="811000" />
+      <workItem from="1687662989049" duration="11000" />
+      <workItem from="1687664293460" duration="8000" />
+      <workItem from="1687665617817" duration="301000" />
+      <workItem from="1687667749844" duration="21000" />
+      <workItem from="1687667876764" duration="6000" />
+      <workItem from="1687674010893" duration="1186000" />
+      <workItem from="1687676062488" duration="780000" />
+      <workItem from="1687677314891" duration="19000" />
+      <workItem from="1687677352453" duration="17000" />
+      <workItem from="1687679217880" duration="49000" />
+      <workItem from="1687679312431" duration="379000" />
+      <workItem from="1687680959496" duration="109000" />
+      <workItem from="1687681251199" duration="39000" />
+      <workItem from="1687681966689" duration="11000" />
+      <workItem from="1687682105230" duration="15000" />
+      <workItem from="1687685900470" duration="16000" />
+      <workItem from="1687688681561" duration="71000" />
+      <workItem from="1687689037748" duration="213000" />
+      <workItem from="1687746099093" duration="130000" />
+      <workItem from="1687746257174" duration="106000" />
+      <workItem from="1687758456460" duration="318000" />
+      <workItem from="1687762449321" duration="139000" />
+      <workItem from="1687769340597" duration="19000" />
+      <workItem from="1687769399310" duration="21000" />
+      <workItem from="1687775952555" duration="22000" />
+      <workItem from="1687779352339" duration="44000" />
+      <workItem from="1687782401983" duration="199000" />
+      <workItem from="1687782896252" duration="69000" />
+      <workItem from="1687783799684" duration="80000" />
+      <workItem from="1687784085368" duration="58000" />
+      <workItem from="1687784183447" duration="118000" />
+      <workItem from="1687784921382" duration="278000" />
+      <workItem from="1687785649404" duration="56000" />
+      <workItem from="1687785946404" duration="38000" />
+      <workItem from="1687786004902" duration="48000" />
+      <workItem from="1687786160522" duration="20000" />
+      <workItem from="1687786258933" duration="73000" />
+      <workItem from="1687825083582" duration="101000" />
+      <workItem from="1687825394971" duration="80000" />
+      <workItem from="1687825520354" duration="500000" />
+      <workItem from="1687826051929" duration="107000" />
+      <workItem from="1687826244996" duration="286000" />
+      <workItem from="1687826571687" duration="206000" />
+      <workItem from="1687826831129" duration="16000" />
+      <workItem from="1687827562515" duration="14000" />
+      <workItem from="1687830118888" duration="23000" />
+      <workItem from="1687830621771" duration="14000" />
+      <workItem from="1687830996891" duration="25000" />
+      <workItem from="1687831139683" duration="6000" />
+      <workItem from="1687831149983" duration="31000" />
+      <workItem from="1687831846473" duration="193000" />
+      <workItem from="1687849690727" duration="408000" />
+      <workItem from="1687851009060" duration="13000" />
+      <workItem from="1687852433912" duration="56000" />
+      <workItem from="1687852555798" duration="640000" />
+      <workItem from="1687863363051" duration="489000" />
+      <workItem from="1687922801537" duration="15739000" />
+      <workItem from="1687946469641" duration="11145000" />
+      <workItem from="1687963767176" duration="783000" />
+      <workItem from="1687997717533" duration="4431000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1686315184594</created>
@@ -340,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687134464235</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="1">
+      <created>1687180414368</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687180414368</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,5 +447,9 @@
         <watch expression="out" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
